@@ -1,0 +1,7 @@
+body {
+    color: red;
+    background:linear-gradient(95deg, aquamarine,rgba(202, 24, 202, 0.89),whitesmoke);
+}
+.second-Container{
+    border: 2px;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration page</title>
+  <link rel="stylesheet" type="text/css" href="style5.css">
+  <link rel="icon" type="image/x-icon" href="icon.png">
+
+</head>
+
+<body onload='document.form1.phone.focus()'>
+
+  <div class="main">
+    <div class="logo">
+      <img src="draw.png" alt="">
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+
+  <form name="form1" action="register.html" onsubmit=" return checkPassword(document.getElementById('myInput'),
+              document.getElementById('myInput2'));
+              return phonenumber(document.form1.phone);
+              return ValidateEmail(document.form1.email)">
+
+    <div class="container">
+      <center>
+        <h1> Patient Registeration Form</h1>
+      </center>
+      <hr>
+      <center>
+
+        <div class="user-details">
+          <div class="input-box">
+            <b><label class="fullname">Full Name</label></b>
+
+            <input type="text" name="fullname" id="fullname" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <b><label for="uname">User name</label></b>
+
+            <input type="text" name="uname" id="uname" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <b> <label for="email">Email</label></b>
+            <input type="text" name="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <b><label class="phone">Phone Number</label></b>
+            <input type="number" name="phone" id="phone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <b>
+              <level class="details">Password</level>
+            </b>
+            <input type="password" placeholder="Enter your password" id="myInput" name="myInput" required>
+            <input type="checkbox" onclick="myPass()">Show Password
+          </div>
+          <div class="input-box">
+            <b>
+              <lebel class="details">Confirm Password</level>
+            </b>
+            <input type="password" placeholder="Confirm your password" id="myInput2" name="myInput2" required>
+
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="first" value="Male">
+          <input type="radio" name="gender" id="second" value="Female">
+          <input type="radio" name="gender" id="third" value="Prefer not to say">
+          <b>
+            <lavel class="gender">Gender</level>
+          </b>
+          <div class="category">
+            <label for="first">
+              <span class="dot one"></span>
+              <b><span class="gender">Male</span></b>
+            </label>
+            <label for="second">
+              <span class="dot two"></span>
+              <b><span class="gender">Female</span></b>
+            </label>
+            <label for="third">
+              <span class="dot three"></span>
+              <b><span class="gender">Prefer not to say</span></b>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit"
+            >
+        </div>
+        <script>
+          function phonenumber(inputtxt) {
+
+            if (inputtxt.value.length < 10 || inputtxt.value.length > 10) {
+              alert("Not a valid Phone Number: Phone no should be 10 digits");
+              return false;
+            }
+            else {
+
+              return true;
+
+            }
+          }
+          function ValidateEmail(input) {
+
+
+
+            if (input.value.indexOf("@", 0) < 0) {
+              alert("Invalid email address!");
+              return false;
+
+            } else if (input.value.indexOf(".", 0) < 0) {
+              alert("Invalid email address!");
+              return false;
+
+            }
+            else {
+
+
+
+              document.form1.email.focus();
+
+              return true;
+
+            }
+
+          }
+          function myPass() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          }
+          function checkPassword(input1, input2) {
+            password1 = input1.value;
+            password2 = input2.value;
+            var letter = /[a-zA-Z]/;
+            var number = /[0-9]/;
+
+            if (password1 != password2) {
+              alert("\nPassword did not match: Please try again...")
+              return false;
+            }
+            if (password1.length<6 ) {
+              alert("\nPassword length should be atleast 6 or greater than 6: Please try again...")
+              return false;
+            }
+            if (password1.search(/[A-Z]/) < 0) {
+              alert("\nPassword should contain atleast one uppercase: Please try again...")
+              return false;
+            }
+            if (password1.search(/[0-9]/) < 0) {
+              alert("\nPassword should contain numbers: Please try again...")
+              return false;
+            }
+
+            
+              else {
+
+                return true;
+              }
+            }
+        </script>
+  </form>
+  </center>
+  </div>
+
+</body>
+
+</html>

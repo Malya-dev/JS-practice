@@ -1,0 +1,102 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      -->
+    <!-- <link rel="stylesheet" href="/style.css" /> -->
+     <link rel="stylesheet" href="./style.css">
+
+   
+  </head>
+  <body>
+    <div class="container">
+      <form  action="newpage.html" id="form" onsubmit="return validateInputs()" method="post">
+        <h1>Registration</h1>
+
+        <div class="input-control">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" />
+          <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+          <label for="username">Contact Number</label>
+          <input id="contact" name="contact" type="number" />
+          <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" />
+          <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" />
+          <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+          <label for="password2">Confirm Password</label>
+          <input id="password2" name="password2" type="password" />
+          <div class="error"></div>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    
+    <script src="index.js"></script>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1> Validation</h1>
+    <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+            Name: <input type="text" name="fname" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="email">
+            Email: <input type="email" name="femail" required><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="phone">
+            Phone: <input type="phone" name="fphone" required><b><span class="formerror"></span></b>
+        </div>
+
+        <div class="formdesign" id="pass">
+            Password: <input type="password" name="fpass" required><b><span class="formerror"</span></b>
+        </div>
+
+        <div class="formdesign" id="cpass">
+            Confirm Password: <input type="password" name="fcpass" required><b><span class="formerror"></span></b>
+        </div>
+
+        <input class="but" type="submit" value="Submit">
+
+    </form>
+</body>
+<script src="index.js"></script>
+
+</html> -->
